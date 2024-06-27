@@ -1,7 +1,8 @@
 import Image from "next/image";
 
+//api/inventory/route.js e server an
 export default async function Home() {
-  const type = 'payments'
+  const type = 'payments' // sa e siw bezwen change dinamiquement donnee u gen su serveur u an
   const fetchSales = async () => {
     try {
       const response = await fetch(`http://localhost:3000/api/inventory?a=get&q=${type}`);

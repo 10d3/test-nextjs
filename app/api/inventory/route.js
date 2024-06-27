@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 export const GET = async function (req) {
-  const url = req.nextUrl.searchParams;
-  const action = url.get("a");
-  const query = url.get("q");
+  const url = req.nextUrl.searchParams; // la e puw recupere url u f ak fetch lan... url lam ap konsa http://localhost:3000/api/inventory?a=get&q=purchases
+  const action = url.get("a"); // la puw pran donne get lan a = get
+  const query = url.get("q"); // la puw pran donne get lan q = purchases lan i ka sales etc...
 
   const inventory = [
     { id: 1, name: "Product A", quantity: 100 },
@@ -30,6 +30,7 @@ export const GET = async function (req) {
     { id: 2, date: "2024-01-02", amount: 220 },
   ];
 
+  // la puw kite sel method get pas nn serveur an sil post lap bay error 405
   if (action !== "get") {
     return NextResponse.json(
       {
@@ -39,6 +40,7 @@ export const GET = async function (req) {
     );
   }
 
+  // la e yon condition ak swicth pul konn ki donnee pul tunnen an response ak q=.... an 
   switch (query) {
     case "inventory":
       return NextResponse.json({ inventory }, { status: 200 });
