@@ -1,7 +1,8 @@
+'use client'
 import Image from "next/image";
 
 //api/inventory/route.js e server an
-export default async function Home() {
+export default function Home() {
   const type = 'payments' // sa e siw bezwen change dinamiquement donnee u gen su serveur u an
   const fetchSales = async () => {
     try {

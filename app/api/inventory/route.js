@@ -40,7 +40,7 @@ export const GET = async function (req) {
     );
   }
 
-  // la e yon condition ak swicth pul konn ki donnee pul tunnen an response ak q=.... an 
+  // la e yon condition ak swicth pul konn ki donnee pul tunnen an response ak q=.... an
   switch (query) {
     case "inventory":
       return NextResponse.json({ inventory }, { status: 200 });
